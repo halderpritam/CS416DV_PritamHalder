@@ -1,4 +1,4 @@
-﻿Model,EngineDisplacement,Cylinders,Trans,Drive,Fuel,Veh Class,Air Pollution Score,City MPG,Hwy MPG,Cmb MPG,Greenhouse Gas Score,SmartWay,Comb CO2
+﻿Model,EngineDisplacement,Cylinders,Trans,Drive,Fuel,VehClass,AirPollutionScore,CityMPG,HwyMPG,CmbMPG,Greenhouse Gas Score,SmartWay,CombCO2
 ACURA Integra,1.5,4,SCV-7,2WD,Gasoline,large car,7,30,37,33,6,No,269
 ACURA MDX,3.5,6,SemiAuto-10,2WD,Gasoline,small SUV,5,19,26,22,5,No,411
 ACURA MDX,3.5,6,SemiAuto-10,4WD,Gasoline,small SUV,5,19,25,21,4,No,423
