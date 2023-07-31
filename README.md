@@ -2,12 +2,14 @@
 
 CS 416 - Narrative Visualization Project Essay By Pritam Halder
 
-Messaging: Fuel-efficient cars emit less pollution over the same amount of distance traveled. They also cost less to operate. 
-Buying a more fuel-efficient car can save you thousands of dollars on fuel costs over time and can often balance out a higher purchase 
-price if you keep the car long enough. There are many factors that can affect the mileage of your car, but in this interactive visualization, 
-we will explore 2023 data about the the respective highway and city MPGs of automobiles, with respect to just a few of these factors, 
-like engine cylinders, fuel type and the make of the vehicle. If you are looking for a cost effective car, you should pick a 
-car which is having cylinder count and engine displacement on the lower side. Another message is, good milege cars are definately better for environment.
+Messaging: Fuel-efficient cars emit less pollution over the same amount of distance traveled. They also cost less to
+        operate. Buying a more fuel-efficient car can save you thousands of dollars on fuel costs over time and can
+        often balance out a higher purchase price if you keep the car long enough. There are many factors that can
+        affect the mileage of your car, but in this interactive visualization, we will explore 2023 data about the
+        respective highway and city MPGs of automobiles, with respect to just a few of these factors, like engine
+        cylinders, fuel type and the make of the vehicle. If you are looking for a cost-effective car, you should pick a
+        car which is having cylinder count and engine displacement on the lower side. Another message is good mileage
+        cars are better for environment.
 
 Narrative Structure: The above visualization utilizes the slideshow narrative visualization technique, while incorporating hybrid elements of the drill-down technique. Each slide contains guidance on how to interact with the visualization.
 
