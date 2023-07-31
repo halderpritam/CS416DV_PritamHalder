@@ -49,6 +49,19 @@ function getRandomJitter(jitterAmount) {
     return (Math.random() - 0.5) * jitterAmount;
 }
 
+document.getElementById('reloadLink1').addEventListener("click", function (event) {
+    event.preventDefault(); 
+    location.reload();
+});
+document.getElementById('reloadLink2').addEventListener("click", function (event) {
+    event.preventDefault();
+    location.reload();
+});
+document.getElementById('reloadLink3').addEventListener("click", function (event) {
+    event.preventDefault();
+    location.reload();
+});
+
 // -------------------------------------------------------------------------------- // 
 // SCENE ONE ---------------------------------------------------------------------- //
 // -------------------------------------------------------------------------------- // 
@@ -114,18 +127,6 @@ async function load1() {
 
 // Attach an event handler to the dropdown
 document.getElementById('vehicleclass').addEventListener('change', handleDropDownChange);
-document.getElementById('reloadLink1').addEventListener("click", function (event) {
-    event.preventDefault(); 
-    location.reload();
-});
-document.getElementById('reloadLink2').addEventListener("click", function (event) {
-    event.preventDefault();
-    location.reload();
-});
-document.getElementById('reloadLink3').addEventListener("click", function (event) {
-    event.preventDefault();
-    location.reload();
-});
 
 // This function is called by the dropdown on top of the plot
 function handleDropDownChange() {
