@@ -1,1 +1,182 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<head>
+    <title>Fuel Efficiency</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body onload="load1(); load2(); load3();">
+    <h1 id="intro">Fuel Efficiency of Automobiles in 2023</h1>
+    <div>
+        <span class="italic" "bold">By Pritam Halder - UIUC CS 416</span>
+        <hr>
+        <img src="Car.png" alt="car" width="240" height="120">
+        <h3>
+            Fuel-efficient cars cause less pollution over the same amount of distance traveled. They also cost less to
+            operate. Buying a fuel-efficient car can save you thousands of dollars as well as they are environment
+            friendly.
+            There are many factors that can affect the mileage of a car (See:
+            <a
+                href="https://www.fueleconomy.gov/feg/factors.shtml#:~:text=Vehicle%20Maintenance,older%20cars%20with%20carbureted%20engines.">Link</a>).
+            In this interactive visualization, we will explore 2023 data about the the respective highway and city
+            MPGs of automobiles, with respect to factors like engine cylinders, transmission type, drive and the
+            make of the vehicle. We will also draw a relation between engine displacement and Co2 emission. These graphs
+            will likely to be a guidance on choosing a fuel efficient and environment friendly car.
+        </h3>
+        <ul>
+            <li>
+                <a href="#one" class="contents" onclick="load1();">Which car brands will get you good mileage?</a>
+            </li>
+            <li>
+                <a href="#two" class="contents" onclick="load2();">Does Engine Displacement Affect Mileage?</a>
+            </li>
+            <li>
+                <a href="#three" class="contents" onclick="load3();">Is there a relationship between CO2 emission and
+                    engine
+                    displacement?</a>
+            </li>
+        </ul>
+        <hr>
+
+    </div>
+    <a href="#two" class="back">Next</a>
+    <h2 id="one">Which car brands will get you good mileage?</h2>
+    <p>See how the highway and city mileages compare for major car brands. Using the dropdown you can filter between
+        vehicle class e.g. Small Car, Minivan or may be Pickup.
+        Try it out !!! </p>
+    <p>Hovering over each data point itself will provide more details via an interactive tooltip. You will know the
+        Make, Model, Drive option, Cylinders and Highway/City MPG. You can click here to <a href="#" id="reloadLink1">Reload</a> the graph.</p>
+    <div>
+        <label for="class">Select a vehicle class to filter data:</label>
+        <select id="vehicleclass" name="class">
+            <option value="" selected disabled>Select a class</option>
+            <option value="small car">Small Car</option>
+            <option value="midsize car">Midsize Car</option>
+            <option value="large car">Large Car</option>
+            <option value="small SUV">Small SUV</option>
+            <option value="standard SUV">Standard SUV</option>
+            <option value="minivan">Minivan</option>
+            <option value="pickup">Pickup</option>
+            <option value="special purpose">Special Purpose</option>
+            <option value="station wagon">Station Wagon</option>
+            <option value="all class type">All Class Type</option>
+        </select>
+    </div>
+    <svg id="scene1" width=900 height=850>
+        <text x="600" y="395">Good Highway MPG</text>
+        <text x="300" y="100" id="anchorCityMPG">Good City MPG</text>
+        <script>
+            // Rotate the text by 45 degrees
+            d3.select('#anchorCityMPG')
+                .attr('transform', 'rotate(270 350 130)');
+        </script>
+        <line x1="40" y1="400" x2="740" y2="400" stroke="black" stroke-dasharray="6" />
+        <line x1="300" y1="50" x2="300" y2="750" stroke="black" stroke-dasharray="6" />
+    </svg>
+
+    <hr>
+    <a href="#intro" class="back">Back to Top</a>
+    <a href="#one" class="back">Previous</a>
+    <a href="#three" class="back">Next</a>
+
+    <h2 id="two">Does Engine Displacement Affect Mileage?</h2>
+    <p>This scatterplot will show you how engine replacement across different car brands affects their mileage.
+        Additionally, hovering
+        over each data point itself will indicate which make of the car you are hovering along with tranmission of the
+        car via an interactive tooltip.
+        This chart can be filtered by hovering over legend items (Cylinder number of car). Once filtered simply click on
+        any legend item to get back unfiltered data. You can click here to <a href="#" id="reloadLink2">Reload</a> the graph.
+    </p>
+    <svg id="scene2" width=900 height=850></svg>
+    <hr>
+
+    <a href="#intro" class="back">Back to Top</a>
+    <a href="#two" class="back">Previous</a>
+    <h2 id="three">Is there a relationship between CO2 emission and engine displacement?</h2>
+    <p>This scatterplot will show us a relation between engine displacement and combined CO2 emission. You will notice
+        that Co2 emission of a larger engine is
+        more than a smaller engine. If someone is looking to buy a car and more focused on obtaining an environment
+        friendly car, this graph will certainly provide a good idea.
+        An interactive tooltip has been added to porvide more details like car brand, combined mileage and air pollution
+        score.
+        This chart can be filtered by hovering over legend items (Air pollution score, 8 APS means cleanest vehicle in
+        terms of emission). Once filtered simply click on any legend item to get back unfiltered data. 
+        You can click here to <a href="#" id="reloadLink3">Reload</a> the graph.
+    </p>
+    <svg id="scene3" width=900 height=850></svg>
+
+    <!-- Script -->
+    <script src="vis.js"></script>
+
+    <hr>
+    <a href="#intro" class="back">Back to Top</a>
+    <h2>About this Visualization</h2>
+    <p>
+        This is a narrative visualization created for the CS 498 Data Visualization course.
+    </p>
+    <h3>Messaging</h3>
+    <p>
+        Fuel-efficient cars emit less pollution over the same amount of distance traveled. They also cost less to operate. 
+        Buying a more fuel-efficient car can save you thousands of dollars on fuel costs over time and can often balance out a higher purchase 
+        price if you keep the car long enough. There are many factors that can affect the mileage of your car, but in this interactive visualization, 
+        we will explore 2023 data about the the respective highway and city MPGs of automobiles, with respect to just a few of these factors, 
+        like engine cylinders, fuel type and the make of the vehicle. If you are looking for a cost effective car, you should pick a 
+        car which is having cylinder count and engine displacement on the lower side. Another message is, good milege cars are definately better for environment.
+    </p>
+    <h3>Narrative Structure</h3>
+    <p>
+        The above visualization utilizes the slideshow narrative visualization technique, while incorporating hybrid
+        elements of the drill-down technique. Each slide contains guidance on how to interact with the visualization.
+    </p>
+    <h3>Visual Structure</h3>
+    <p>
+        The structure of the slides guides users
+        from one idea to the next, but there is still room for individual exploration at each stage. We accomplish
+        visual consistency by maintaining uniform elements throughout, introducing a mixture of text, image and chart
+        elements, and having meaningful colors (highest APS is shown by green color and lowest one is shown as maroon).
+        Every
+        chart has some cool data population animation which will demand users attention.
+    </p>
+    <h3>Scenes</h3>
+    <p>
+        The scenes themselves are constructed via HTML id tags. Each scene has a unique id that is linked via the
+        buttons.The “Next/Previous”
+        buttons allow users to navigate from scene to scene independently, but the structure helps guide the overall
+        narrative.
+        Each scene is composed of a unique chart that highlights its own distinct message.
+    </p>
+    <h3>Annotations</h3>
+    <p>
+        Annotations remain consistent on the charts, even throughout changes triggered by the interactions. This allows
+        the user
+        to have some grounding on the overall message the visualization is trying to communicate. For example, the
+        annotation
+        about a relatively good gas mileage stays consistent throughout the vis transformation from multiple car brands
+        to single car brand data representation.
+        This can help a user to better understand which car gives better mileage.
+    </p>
+    <h3>Parameters</h3>
+    <p>
+        The visualizations have a handful of relevant parameters that help the user better explore the data. By
+        interacting with
+        JavaScript input features, such as the dropdown filter in vis1 or the interactive legend in vis2, the user can
+        choose to
+        see
+        data about a specific category, or even filter out the datapoints by hovering over specific engine cylinder
+        categories.
+        The user input is used as a parameter that controls what the visualization portrays.
+    </p>
+    <h3>Triggers</h3>
+    <p>
+        The triggers are implemented via events and callbacks, such as “mouseover”, “mouseout” and “click”. When
+        specific html elements
+        experience these events, the callback function is invoked, and we can change the visualization with respect to
+        the
+        action indicated by the trigger. The example triggers we have here are the dropdowns and hovering legend.
+    </p>
+    <hr>
+</body>
+
+</html>
